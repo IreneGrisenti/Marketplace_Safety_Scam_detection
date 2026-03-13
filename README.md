@@ -29,4 +29,4 @@ Install dependencies:
 ## Environment
 
 Python: 3.12.3  
-Packages: Numpy, Pandas, Matplotlib, Jupyter, scikit-learn (see requirements.txt)
+Packages: Numpy, Pandas, Matplotlib, Jupyter, Scikit-learn (see requirements.txt)
