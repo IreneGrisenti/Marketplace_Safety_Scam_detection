@@ -1,3 +1,7 @@
+This is an individual implementation of a group school project completed as part of a Machine Learning course. The project was originally developed in a team and this repository contains my personal version where I explored different and additional approaches other than experimented independently.  
+
+The project was structured in two phases: an initial dataset (`historical_data`) was provided to build and evaluate the model, followed by a second release of new unlabelled data (`new_data`)to simulate a real production deployment on unseen listings.  
+
 # Marketplace Safety - Prioritization of Suspicious Activity
 
 This project builds a decision-support tool to help a Trust & Safety team prioritize the review of suspicious listings on a consumer marketplace app.  
@@ -6,7 +10,7 @@ Every week the platform is affected by a small but harmful number of scam listin
 
 ## What the model does
 
-The model scores every listing with a risk probability and ranks them from most to least suspicious. Each day the team reviews the top 10% highest-risk cases first, ensuring the most dangerous listings are always acted on within the team's daily capacity.
+The model scores every listing with a risk probability and ranks them from most to least suspicious. Each day the team reviews the top 100 highest-risk cases first, ensuring the most dangerous listings are always acted on within the team's daily capacity.  
 
 ## How it was built
 
@@ -14,7 +18,9 @@ I trained and compared five models on historical platform data, selecting Random
 
 ## Results
 
-Reviewing the top 10% of daily listings the model catches approximately 3x more scams than random selection within the same workload. The daily capacity can be adjusted up or down based on team availability making the tool flexible and operationally practical.
+Reviewing the top 100 of daily listings the model catches approximately 3x more scams than random selection within the same workload. The daily capacity can be adjusted up or down based on team availability making the tool flexible and operationally practical.
+
+The final model was applied to a new unlabelled dataset of 2000 listings, simulating a real production run. The top 100 highest-risk list contains the most suspicious listings ranked at the top.  
 
 ## Installation
 
