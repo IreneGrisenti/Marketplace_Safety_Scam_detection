@@ -1,6 +1,6 @@
 This is an individual implementation of a group school project completed as part of a Machine Learning course. The project was originally developed in a team and this repository contains my personal version where I explored different and additional approaches other than experimented independently.  
 
-The project was structured in two phases: an initial dataset (`historical_data`) was provided to build and evaluate the model, followed by a second release of new unlabelled data (`new_data`)to simulate a real production deployment on unseen listings.  
+The project was structured in three phases: an initial dataset (`historical_data`) was provided to build and evaluate the model, followed by a second release of new unlabelled data on Tuesday 17/03/2026 (`new_data`) to simulate a real production deployment on unseen listings. Finally, on Thursday 19/03/2026, the true labels for the new data were released (`new_data_target 1`), allowing a full evaluation of the model's performance.  
 
 # Marketplace Safety - Prioritization of Suspicious Activity
 
@@ -10,7 +10,7 @@ Every week the platform is affected by a small but harmful number of scam listin
 
 ## What the model does
 
-The model scores every listing with a risk probability and ranks them from most to least suspicious. Each day the team reviews the top 100 highest-risk cases first, ensuring the most dangerous listings are always acted on within the team's daily capacity.  
+The model scores every listing with a risk score and ranks them from most to least suspicious. Each day the team reviews the top 100 highest-risk cases first, ensuring the most dangerous listings are always acted on within the team's daily capacity.  
 
 ## How it was built
 
@@ -18,9 +18,11 @@ I trained and compared five models on historical platform data, selecting Random
 
 ## Results
 
-Reviewing the top 100 of daily listings the model catches approximately 3x more scams than random selection within the same workload. The daily capacity can be adjusted up or down based on team availability making the tool flexible and operationally practical.
+Across training, test and new data the model delivers consistent performance with an F1 score of ~0.31 and a recall of ~0.70, confirming it generalizes well to unseen listings without overfitting.
 
-The final model was applied to a new unlabelled dataset of 2000 listings, simulating a real production run. The top 100 highest-risk list contains the most suspicious listings ranked at the top.  
+At a daily review capacity of 100 cases the model identifies real scams at up to 4.5x the rate of random selection. Nearly 1 in 2 flagged cases is a real scam, ensuring the Trust & Safety team spends their time efficiently on the highest-risk listings.
+
+The model was validated on a new unlabelled dataset of 2000 listings simulating a real production run. When the true labels were subsequently released, the results confirmed that the model performs reliably on real unseen data, catching 48 out of 212 scams in the top 100 flagged cases, consistent with all previous evaluations.
 
 ## Installation
 
